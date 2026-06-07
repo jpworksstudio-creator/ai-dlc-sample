@@ -21,31 +21,35 @@ Use this before `aidlc-inception-lite` for a new small Greenfield MVP. Do not mi
 
 ## Process
 
-1. Capture the target user, current behavior, pain point, current alternatives, ideal experience, primary user journey, riskiest hypothesis, success metrics, and out-of-scope experiences.
-2. Separate `Facts`, `Hypotheses`, `Decisions`, and `Open Questions`.
-3. Ask only questions that materially affect Product Hypothesis quality. Ask at most 5 questions at a time.
-4. Produce `product-discovery/product-hypothesis.md` and `product-discovery/user-journey.md`.
-5. Ask the human to approve the Product Hypothesis.
+1. Initialize a provisional intent directory under `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+2. Create the minimum discovery-time files: `intent.md`, `state.md`, `product-discovery/product-hypothesis.md`, and `product-discovery/user-journey.md`.
+3. Set `state.md` to:
+   ```text
+   Current Phase: product-discovery
+   Status: in-progress
+   Product Hypothesis Approval: pending
+   ```
+4. Capture the target user, current behavior, pain point, current alternatives, ideal experience, primary user journey, riskiest hypothesis, success metrics, and out-of-scope experiences.
+5. Separate `Facts`, `Hypotheses`, `Decisions`, and `Open Questions`.
+6. Ask only questions that materially affect Product Hypothesis quality. Ask at most 5 questions at a time.
+7. Ask the human to approve the Product Hypothesis.
 
 ## Outputs
 
 ```text
-product-discovery/
-├─ product-hypothesis.md
-└─ user-journey.md
+docs/aidlc/intents/intent-<nnn>-<slug>/
+├─ intent.md
+├─ state.md
+└─ product-discovery/
+   ├─ product-hypothesis.md
+   └─ user-journey.md
 ```
 
 ## Human Approval Gate
 
 Do not proceed to AI-DLC Inception until the human explicitly approves `product-hypothesis.md`.
 
-Record the review result under:
-
-```text
-reviews/product-discovery-review.md
-```
-
-The review must include Status, Reviewer, Reviewed At, Remaining Issues, and Notes.
+During Product Discovery, record the approval status in `state.md` and `product-discovery/product-hypothesis.md`. Do not create `reviews/` yet; `aidlc-intent-bootstrap-lite` initializes `reviews/` after Product Hypothesis approval.
 
 ## Stop Conditions
 
@@ -59,6 +63,7 @@ The review must include Status, Reviewer, Reviewed At, Remaining Issues, and Not
 - Do not create requirements.
 - Do not create wireframes.
 - Do not start AI-DLC Inception.
+- Do not create `workflow.md`, `decisions.md`, `open-questions.md`, `traceability.md`, `reviews/`, or `inception/`; those are initialized by `aidlc-intent-bootstrap-lite` after Product Hypothesis approval.
 - Do not treat hypotheses as facts.
 - Do not write application code.
 
