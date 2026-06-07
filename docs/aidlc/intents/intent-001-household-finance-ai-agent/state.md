@@ -9,15 +9,16 @@
 
 ## 現在のフェーズ
 
-現在のフェーズ: プロダクトディスカバリー
-状態: 承認済み
-プロダクト仮説の承認: 承認済み
+Current Phase: product-discovery
+Status: completed
+Product Hypothesis Approval: approved
+Next Action: /aidlc-inception-lite
 
 ## 進捗
 
 | ステージ | 状態 | レビュー | 成果物 | 備考 |
 |---|---|---|---|---|
-| プロダクトディスカバリー | 承認済み | 承認済み | `product-hypothesis.md`, `user-journey.md` | 2026-06-07 に人間による明示承認 |
+| プロダクトディスカバリー | 完了 | 承認済み | `product-hypothesis.md`, `user-journey.md`, `reviews/product-discovery-review.md` | 成功指標の定量閾値更新後、人間による明示承認 |
 
 ## 停止ルール
 
