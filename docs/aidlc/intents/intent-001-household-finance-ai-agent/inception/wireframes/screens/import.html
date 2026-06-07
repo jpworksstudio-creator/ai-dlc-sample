@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCR-2 データ取り込み - ワイヤーフレーム</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { font-family: sans-serif; margin: 0; max-width: 480px; margin-inline: auto; background: #f5f5f5; }
+    .wf { border: 2px dashed #999; background: #fff; margin: 8px; padding: 12px; }
+    .wf-label { font-size: 11px; color: #666; margin-bottom: 4px; }
+    header { border: 1px solid #ccc; padding: 12px; display: flex; align-items: center; gap: 8px; }
+    .btn { display: block; width: 100%; padding: 12px; margin: 8px 0; border: 2px solid #333; background: #eee; }
+    .btn-primary { background: #ddd; font-weight: bold; }
+    .state-note { font-size: 12px; color: #c00; border-left: 3px solid #c00; padding-left: 8px; margin: 8px; }
+    .error { color: #c00; font-size: 13px; }
+    label { display: block; margin: 8px 0; }
+  </style>
+</head>
+<body>
+  <p class="state-note">[WF] SCR-2 データ取り込み | ストーリー: S-1, S-2</p>
+
+  <header class="wf">
+    <a href="home.html" aria-label="戻る">←</a>
+    <strong>データ取り込み</strong>
+  </header>
+
+  <main>
+    <form class="wf" aria-label="取り込みフォーム">
+      <div class="wf-label">アプリ選択 [Validation Error: 未選択時]</div>
+      <fieldset>
+        <legend>家計簿アプリ</legend>
+        <label><input type="radio" name="app" value="zaim"> Zaim</label>
+        <label><input type="radio" name="app" value="moneytree"> Moneytree</label>
+      </fieldset>
+      <p class="error" role="alert">※ アプリを選択してください</p>
+
+      <div class="wf-label">ファイル選択</div>
+      <label for="export-file">エクスポートファイル（CSV 等）</label>
+      <input type="file" id="export-file" name="export-file" accept=".csv">
+      <p class="error" role="alert">※ ファイルを選択してください</p>
+
+      <button type="submit" class="btn btn-primary">取り込む</button>
+    </form>
+
+    <section class="wf" aria-label="Loading 状態">
+      <div class="wf-label">[Loading]</div>
+      <p>取り込み中…</p>
+    </section>
+
+    <section class="wf" aria-label="Success 状態">
+      <div class="wf-label">[Success]</div>
+      <p>142件の取引を取り込みました。</p>
+      <a href="home.html" class="btn">ホームへ戻る</a>
+    </section>
+
+    <section class="wf" aria-label="Error 状態">
+      <div class="wf-label">[Error]</div>
+      <p role="alert">ファイルの形式が正しくありません。CSV を選択してください。</p>
+    </section>
+  </main>
+</body>
+</html>
