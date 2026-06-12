@@ -59,6 +59,8 @@ Every stage must be explicitly approved by the human before the next stage start
 
 Use each stage checklist, then use `docs/aidlc/checklists/inception-exit-checklist.md`.
 
+At every gate, the executing Skill self-reviews its checklist and records per-item results in the review file's Agent Self-Review section before requesting human approval. Present only `Concern` and `Fail` items to the human. Self-review never replaces human approval.
+
 ## Next Skill
 
 Start with `aidlc-intent-bootstrap-lite`, unless intent artifacts already exist and are approved.

@@ -73,6 +73,8 @@ reviews/units-review.md
 
 Use `docs/aidlc/checklists/units-checklist.md`.
 
+Before requesting human approval, self-review every checklist item and record each result in the review file's Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. This also applies to `reviews/inception-exit-review.md` using `docs/aidlc/checklists/inception-exit-checklist.md`. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
+
 ## Next Skill
 
 Run `docs/aidlc/checklists/inception-exit-checklist.md`, create `reviews/inception-exit-review.md`, then stop before Construction.

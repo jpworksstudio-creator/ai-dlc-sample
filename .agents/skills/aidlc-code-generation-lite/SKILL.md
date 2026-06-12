@@ -73,6 +73,8 @@ Do not implement any Layer until the Code Generation Plan is approved. Do not pr
 
 Use `docs/aidlc/checklists/code-generation-checklist.md` and `docs/aidlc/checklists/security-lite-checklist.md`.
 
+Before requesting each Layer checkpoint, self-review every checklist item and record each result in `layers/<layer-id>/review.md` under the Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
+
 ## Next Skill
 
 `aidlc-build-and-test-lite`

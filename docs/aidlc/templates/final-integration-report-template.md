@@ -20,6 +20,18 @@ All completed Units.
 
 - <issue or None>
 
+## Agent Self-Review
+
+Completed before requesting human approval, using `docs/aidlc/checklists/final-integration-checklist.md`.
+
+| # | Checklist Item | Result | Note |
+|---|---|---|---|
+| 1 | <item> | Pass / Concern / Fail | <short note> |
+
+### Items Requiring Human Attention
+
+- <item with question or proposed fix / None>
+
 ## Approval
 
 Status: Approved / Revision Required

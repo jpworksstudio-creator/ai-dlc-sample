@@ -85,6 +85,8 @@ reviews/wireframes-review.md
 
 Use `docs/aidlc/checklists/wireframes-checklist.md`.
 
+Before requesting human approval, self-review every checklist item and record each result in the review file's Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
+
 ## Next Skill
 
 `aidlc-application-design-lite`

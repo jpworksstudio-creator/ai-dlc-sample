@@ -64,6 +64,8 @@ Do not proceed past a Layer, Unit, or Final Integration checkpoint until the rel
 
 Use `docs/aidlc/checklists/build-and-test-checklist.md` and `docs/aidlc/checklists/final-integration-checklist.md` when applicable.
 
+Before requesting human approval, self-review every checklist item and record each result in the report's Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
+
 ## Next Skill
 
 `aidlc-ui-review-lite` if UI was implemented; otherwise continue the Unit loop. After Final Integration approval, return to `aidlc-construction-lite` to run Construction Exit.

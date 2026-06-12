@@ -71,6 +71,8 @@ Do not proceed to Code Generation until Infrastructure Design is approved when t
 
 Use `docs/aidlc/checklists/infrastructure-design-checklist.md` and `docs/aidlc/checklists/security-lite-checklist.md`.
 
+Before requesting human approval, self-review every checklist item and record each result in the review file's Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
+
 ## Next Skill
 
 `aidlc-code-generation-lite`

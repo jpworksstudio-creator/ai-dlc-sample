@@ -66,6 +66,8 @@ Do not proceed to Infrastructure Design or Code Generation until NFR Design is a
 
 Use `docs/aidlc/checklists/nfr-design-checklist.md` and `docs/aidlc/checklists/security-lite-checklist.md`.
 
+Before requesting human approval, self-review every checklist item and record each result in the review file's Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
+
 ## Next Skill
 
 `aidlc-infrastructure-design-lite` if needed; otherwise `aidlc-code-generation-lite`.

@@ -78,6 +78,8 @@ During Product Discovery, record the approval status in `state.md` and `product-
 
 Use `docs/aidlc/checklists/product-discovery-checklist.md`.
 
+Before requesting human approval, self-review every checklist item and record each result under an `Agent Self-Review` heading in `product-discovery/product-hypothesis.md` as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
+
 ## Next Skill
 
 After Product Hypothesis approval, run `aidlc-inception-lite`.

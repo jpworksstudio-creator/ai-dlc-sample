@@ -70,6 +70,8 @@ Do not proceed to NFR Assessment until Functional Design is approved.
 
 Use `docs/aidlc/checklists/functional-design-checklist.md`.
 
+Before requesting human approval, self-review every checklist item and record each result in the review file's Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
+
 ## Next Skill
 
 `aidlc-nfr-assessment-lite`

@@ -112,9 +112,13 @@ Application code and tests are written to the repository source tree as planned 
 
 ## How Approval Works
 
-- Each stage's approval result is recorded in a review file under `reviews/` (`Approved` / `Revision Required`).
-- The Agent is forbidden from proceeding to the next stage without an `Approved` review.
-- Manual review criteria are collected in the checklists under `docs/aidlc/checklists/`.
+Approval is a two-step process: the Agent self-reviews first, then the human decides.
+
+1. Before requesting approval, the Agent evaluates every item in the stage checklist (`docs/aidlc/checklists/`) and records per-item results (`Pass` / `Concern` / `Fail`) in the Agent Self-Review section of the review file (or the Build/Test report).
+2. The Agent presents only `Concern` and `Fail` items to the human, each with a question or a proposed fix, so the human can focus on what actually needs judgment.
+3. The human sets the final status (`Approved` / `Revision Required`) in the review file under `reviews/`.
+
+The Agent is forbidden from proceeding to the next stage without an `Approved` review. Self-review never replaces human approval.
 
 ## Repository Structure
 

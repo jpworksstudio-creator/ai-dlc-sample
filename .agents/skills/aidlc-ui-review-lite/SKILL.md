@@ -65,6 +65,8 @@ Do not mark the Unit complete until UI Review is approved.
 
 Use `docs/aidlc/checklists/ui-review-checklist.md`.
 
+Before requesting human approval, self-review every checklist item and record each result in `reviews/ui-review.md` under the Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
+
 ## Next Skill
 
 If incomplete Units exist, return to the next Unit. If all Units are complete, run Final Integration Validation.

@@ -64,6 +64,8 @@ Construction Plan must not be created until this review is `Approved`.
 
 Use `docs/aidlc/checklists/construction-input-readiness-checklist.md`.
 
+Before requesting human approval, self-review every checklist item and record each result in the review file's Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
+
 ## Next Skill
 
 `aidlc-construction-lite` creates `construction/construction-plan.md` after approval.

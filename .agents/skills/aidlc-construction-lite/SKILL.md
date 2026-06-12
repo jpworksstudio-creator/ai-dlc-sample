@@ -85,6 +85,8 @@ Do not declare Construction complete until `construction/reviews/construction-ex
 
 Use `docs/aidlc/checklists/construction-plan-checklist.md` for the plan and `docs/aidlc/checklists/construction-exit-checklist.md` at Construction Exit.
 
+Before requesting human approval at each gate, self-review every checklist item and record each result in the review file's Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
+
 ## Next Skill
 
 `aidlc-construction-input-readiness-lite`
