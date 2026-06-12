@@ -35,9 +35,16 @@ Use after workflow approval. Do not use if the Product Hypothesis or workflow is
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
 inception/requirements.md
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `requirements.md`: `requirements-template.md`
+- `reviews/requirements-review.md`: `review-template.md`
 
 ## Human Approval Gate
 

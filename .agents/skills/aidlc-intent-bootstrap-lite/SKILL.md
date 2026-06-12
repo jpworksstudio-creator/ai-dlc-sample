@@ -47,7 +47,13 @@ docs/aidlc/intents/intent-<nnn>-<slug>/
 └─ inception/
 ```
 
-Use templates from `docs/aidlc/templates/`.
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `workflow.md`: `workflow-template.md`
+- `decisions.md`: `decisions-template.md`
+- `open-questions.md`: `open-questions-template.md`
+- `traceability.md`: `traceability-template.md`
+- files under `reviews/`: `review-template.md`
 
 ## Human Approval Gate
 

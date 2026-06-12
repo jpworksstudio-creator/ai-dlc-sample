@@ -1,6 +1,6 @@
 # Traceability Matrix
 
-Track the path from product hypothesis to implementation unit.
+Track the path from product hypothesis to implemented code.
 
 ```text
 Hypothesis
@@ -14,6 +14,8 @@ User Story
 Screen
   ↓
 Unit of Work
+  ↓
+Layer (implemented files and tests)
 ```
 
 | ID | Type | Name | Maps To | Unconnected Reason | Approval Status |
@@ -23,7 +25,10 @@ Unit of Work
 | FR-1 | Requirement | <requirement> | S-1 |  | Pending |
 | S-1 | User Story | <story> | SCR-1 |  | Pending |
 | SCR-1 | Screen | <screen> | U-1 |  | Pending |
-| U-1 | Unit of Work | <unit> |  |  | Pending |
+| U-1 | Unit of Work | <unit> | L-1 |  | Pending |
+| L-1 | Layer | <layer summary, key files, tests> |  |  | Pending |
+
+Layer rows are added during Construction by `aidlc-code-generation-lite` after each approved Layer.
 
 ## Rules
 
@@ -31,3 +36,4 @@ Unit of Work
 - Every approved requirement should map to at least one story.
 - Every UI story should map to at least one screen.
 - Every story should map to exactly one primary unit or state why not.
+- Every completed unit should map to at least one approved Layer with key files and tests.

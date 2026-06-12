@@ -38,9 +38,16 @@ Use only after wireframes are approved.
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
 inception/application-design.md
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `application-design.md`: `application-design-template.md`
+- `reviews/application-design-review.md`: `review-template.md`
 
 ## Human Approval Gate
 

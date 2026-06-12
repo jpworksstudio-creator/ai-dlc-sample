@@ -32,10 +32,17 @@ Use only when a Unit or Layer changes UI.
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
-construction/<unit-id>/ui-review.md
-construction/<unit-id>/reviews/ui-review.md
+construction/<unit-id>/ui-review.md          (findings report)
+construction/<unit-id>/reviews/ui-review.md  (human approval record)
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `ui-review.md`: `ui-review-template.md`
+- `reviews/ui-review.md`: `review-template.md`
 
 ## Human Approval Gate
 

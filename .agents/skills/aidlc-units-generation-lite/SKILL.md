@@ -34,9 +34,16 @@ Normally use conditionally when multiple units may be needed. During the first l
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
 inception/units-of-work.md
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `units-of-work.md`: `units-of-work-template.md`
+- `reviews/units-review.md` and `reviews/inception-exit-review.md`: `review-template.md`
 
 ## Human Approval Gate
 

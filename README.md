@@ -6,7 +6,7 @@ It does not copy the full AI-DLC v2 runtime. Instead, it keeps the core ideas:
 
 - staged Product Discovery, Inception, and Construction
 - explicit human approval gates
-- traceability from hypothesis to implementation unit
+- traceability from hypothesis to implemented code
 - right-sized workflow composition
 - clear separation of facts, hypotheses, decisions, and open questions
 - stopping before Operations unless humans explicitly decide otherwise

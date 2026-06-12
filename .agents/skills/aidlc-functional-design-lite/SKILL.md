@@ -32,6 +32,8 @@ Use for each approved Unit before NFR Assessment.
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
 construction/<unit-id>/functional-design/
 ├─ business-logic-model.md
@@ -39,6 +41,13 @@ construction/<unit-id>/functional-design/
 └─ business-rules.md
 construction/<unit-id>/reviews/functional-design-review.md
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `business-logic-model.md`: `business-logic-model-template.md`
+- `domain-entities.md`: `domain-entities-template.md`
+- `business-rules.md`: `business-rules-template.md`
+- `reviews/functional-design-review.md`: `review-template.md`
 
 ## Human Approval Gate
 

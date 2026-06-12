@@ -34,6 +34,8 @@ Use for each Unit after Functional Design approval.
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
 construction/<unit-id>/nfr-requirements.md
 construction/<unit-id>/tech-stack-decisions.md
@@ -44,6 +46,15 @@ construction/<unit-id>/reviews/nfr-assessment-review.md
 ```
 
 Shared baseline outputs are created or updated only when approved.
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `nfr-requirements.md`: `nfr-requirements-template.md`
+- `tech-stack-decisions.md`: `tech-stack-decisions-template.md`
+- `shared/tech-stack-baseline.md`: `tech-stack-baseline-template.md`
+- `shared/nfr-baseline.md`: `nfr-baseline-template.md`
+- `shared/cross-cutting-decisions.md`: `cross-cutting-decisions-template.md`
+- `reviews/nfr-assessment-review.md`: `review-template.md`
 
 ## Human Approval Gate
 

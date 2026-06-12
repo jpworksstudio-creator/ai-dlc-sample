@@ -31,12 +31,20 @@ Use only when performance, security, availability, accessibility, audit, or othe
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
 construction/<unit-id>/nfr-design/
 ├─ nfr-design-patterns.md
 └─ logical-components.md
 construction/<unit-id>/reviews/nfr-design-review.md
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `nfr-design-patterns.md`: `nfr-design-patterns-template.md`
+- `logical-components.md`: `logical-components-template.md`
+- `reviews/nfr-design-review.md`: `review-template.md`
 
 ## Human Approval Gate
 

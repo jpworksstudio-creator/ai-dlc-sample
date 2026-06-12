@@ -32,10 +32,18 @@ Use after intent bootstrap and before requirements analysis.
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
 workflow.md
 workflow-rationale.md
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `workflow.md`: `workflow-template.md`
+- `workflow-rationale.md`: `workflow-rationale-template.md`
+- `reviews/workflow-review.md`: `review-template.md`
 
 ## Human Approval Gate
 

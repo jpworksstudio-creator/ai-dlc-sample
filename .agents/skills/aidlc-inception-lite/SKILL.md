@@ -53,7 +53,7 @@ Every stage must be explicitly approved by the human before the next stage start
 - Do not write code.
 - Do not add libraries.
 - Do not create infrastructure.
-- Do not proceed to Construction.
+- Do not proceed to Construction within this Skill; after Inception Exit approval, Construction starts separately with `aidlc-construction-lite`.
 
 ## Validation Checklist
 

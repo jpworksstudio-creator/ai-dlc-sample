@@ -14,6 +14,16 @@ This Harness starts only after Inception Exit is approved. It supports lightweig
 
 Construction may create or update application code only through approved `aidlc-code-generation-lite` Layer checkpoints. Each Layer should be about 5-8 files unless the human approves a larger Layer.
 
+## Artifact Base Path
+
+All `construction/` paths in this document and in the Construction Skills are relative to the intent directory:
+
+```text
+docs/aidlc/intents/intent-<nnn>-<slug>/
+```
+
+Application code and tests are written to the repository source tree as planned in each Unit's `code-generation-plan.md`.
+
 ## Official AI-DLC v2 Artifact Boundary
 
 Functional Design, NFR Design, and Infrastructure Design keep separate artifacts:
@@ -57,6 +67,10 @@ Layer-specific human checkpoints live under:
 ```text
 construction/<unit-id>/layers/<layer-id>/review.md
 ```
+
+## Construction Exit
+
+`aidlc-construction-lite` owns Construction Exit. After Final Integration approval it verifies `docs/aidlc/checklists/construction-exit-checklist.md`, confirms `traceability.md` connects Hypothesis through Unit of Work to implemented Layers, creates `construction/construction-exit.md` from `construction-exit-template.md`, and records human approval in `construction/reviews/construction-exit-review.md`.
 
 ## Operations Stop Rule
 

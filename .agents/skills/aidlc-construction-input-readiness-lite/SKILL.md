@@ -30,10 +30,17 @@ Use immediately after `aidlc-construction-lite` confirms Inception Exit approval
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
 construction/construction-input-readiness.md
 construction/reviews/construction-input-review.md
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `construction-input-readiness.md`: `construction-input-readiness-template.md`
+- `reviews/construction-input-review.md`: `review-template.md`
 
 ## Human Approval Gate
 

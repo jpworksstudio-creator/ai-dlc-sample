@@ -21,6 +21,7 @@ Use only after required Functional Design, NFR Assessment, optional NFR Design, 
 - `construction/<unit-id>/nfr-design/` if present
 - `construction/<unit-id>/infrastructure-design/` if present
 - `construction/construction-plan.md`
+- `traceability.md`
 
 ## Process
 
@@ -30,8 +31,11 @@ Use only after required Functional Design, NFR Assessment, optional NFR Design, 
 4. If `.env.example` is needed, generate it from approved Infrastructure Design without secrets.
 5. Stop after each Layer for Build/Test and Human Checkpoint.
 6. Update `CODE_SUMMARY.md` after approved Layers.
+7. After each approved Layer, update `traceability.md` from Unit of Work to Layer, key source files, and tests.
 
 ## Outputs
+
+Artifact paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`. Application code and tests are written to the repository source tree as planned in `code-generation-plan.md`.
 
 ```text
 construction/<unit-id>/code-generation-plan.md
@@ -39,6 +43,13 @@ construction/<unit-id>/CODE_SUMMARY.md
 construction/<unit-id>/layers/<layer-id>/diff-summary.md
 construction/<unit-id>/layers/<layer-id>/review.md
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `code-generation-plan.md`: `code-generation-plan-template.md`
+- `CODE_SUMMARY.md`: `code-summary-template.md`
+- `layers/<layer-id>/diff-summary.md`: `layer-diff-summary-template.md`
+- `layers/<layer-id>/review.md`: `layer-review-template.md`
 
 ## Human Approval Gate
 

@@ -45,6 +45,13 @@ docs/aidlc/intents/intent-<nnn>-<slug>/
    └─ user-journey.md
 ```
 
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `intent.md`: `intent-template.md`
+- `state.md`: `state-template.md`
+- `product-hypothesis.md`: `product-hypothesis-template.md`
+- `user-journey.md`: `user-journey-template.md`
+
 ## Human Approval Gate
 
 Do not proceed to AI-DLC Inception until the human explicitly approves `product-hypothesis.md`.

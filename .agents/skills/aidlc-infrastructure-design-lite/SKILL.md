@@ -33,12 +33,20 @@ Use only when the Unit needs deployment design, external API conditions, persist
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
 construction/<unit-id>/infrastructure-design/
 ├─ infrastructure-design.md
 └─ deployment-architecture.md
 construction/<unit-id>/reviews/infrastructure-design-review.md
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `infrastructure-design.md`: `infrastructure-design-template.md`
+- `deployment-architecture.md`: `deployment-architecture-template.md`
+- `reviews/infrastructure-design-review.md`: `review-template.md`
 
 ## Human Approval Gate
 

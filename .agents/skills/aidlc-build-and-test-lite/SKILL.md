@@ -30,11 +30,18 @@ Use after each `aidlc-code-generation-lite` Layer, at Unit completion, and after
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
 construction/<unit-id>/layers/<layer-id>/build-and-test-report.md
 construction/<unit-id>/build-and-test-report.md
 construction/final-integration-report.md
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- Layer and Unit reports: `build-and-test-report-template.md`
+- `final-integration-report.md`: `final-integration-report-template.md`
 
 ## Human Approval Gate
 
@@ -59,4 +66,4 @@ Use `docs/aidlc/checklists/build-and-test-checklist.md` and `docs/aidlc/checklis
 
 ## Next Skill
 
-`aidlc-ui-review-lite` if UI was implemented; otherwise continue Unit loop or Construction Exit after Final Integration approval.
+`aidlc-ui-review-lite` if UI was implemented; otherwise continue the Unit loop. After Final Integration approval, return to `aidlc-construction-lite` to run Construction Exit.
