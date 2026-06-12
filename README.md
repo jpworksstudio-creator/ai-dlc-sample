@@ -1,98 +1,98 @@
 # AI-DLC Lite MVP Template
 
-AWS Labs AI-DLC v2 の設計思想をベースにした、小規模 Greenfield MVP 開発用の軽量テンプレートです。
+A lightweight template for small Greenfield MVP development, based on the design philosophy of AWS Labs AI-DLC v2.
 
-AI-DLC v2 のランタイムをそのまま移植するのではなく、次の中核アイデアだけを Cursor Agent で扱いやすい形に縮約しています。
+Instead of porting the full AI-DLC v2 runtime, this template distills the core ideas into a form that Cursor Agent can handle easily:
 
-- Product Discovery → Inception → Construction の段階的進行
-- すべてのステージに明示的な人間承認ゲート
-- 仮説から実装コードまでのトレーサビリティ
-- 規模に応じた right-sizing（不要な工程はスキップ）
-- 事実・仮説・決定・未解決事項の分離
-- Operations 手前での停止（人間が明示的に指示しない限り進まない）
+- staged progression through Product Discovery, Inception, and Construction
+- explicit human approval gates at every stage
+- traceability from hypothesis to implemented code
+- right-sized workflows (skip stages that are not needed)
+- clear separation of facts, hypotheses, decisions, and open questions
+- stopping before Operations unless humans explicitly decide otherwise
 
-## 全体フロー
+## Overall Flow
 
 ```text
 /ux-product-discovery-lite
-  └─ Product Hypothesis を作成 ──▶ 人間が承認
+  └─ Create the Product Hypothesis ──▶ human approves
         ↓
 /aidlc-inception-lite
-  └─ 要件 → ストーリー → ワイヤーフレーム → 設計 → Unit 分割
-     （各ステージで人間が承認） ──▶ Inception Exit を承認
+  └─ Requirements → Stories → Wireframes → Design → Unit split
+     (human approves each stage) ──▶ approve Inception Exit
         ↓
 /aidlc-construction-lite
-  └─ 計画 → Unit ごとに設計・実装・テスト
-     （Layer 単位で人間が承認） ──▶ Construction Exit を承認
+  └─ Plan → per-Unit design, implementation, and tests
+     (human approves each Layer) ──▶ approve Construction Exit
         ↓
-ここで停止（Operations には進まない）
+Stop here (do not proceed to Operations)
 ```
 
-## クイックスタート
+## Quick Start
 
-1. このテンプレートをコピーして新しいリポジトリを作る
-2. Cursor のチャットで作りたいプロダクトのアイデアを伝え、`/ux-product-discovery-lite` を実行する
-3. 以降は Agent の案内に従い、各ステージの成果物を確認して承認していく
+1. Copy this template into a new repository.
+2. Describe your product idea in Cursor chat and run `/ux-product-discovery-lite`.
+3. Follow the Agent's guidance: review and approve the artifacts at each stage.
 
-Agent は承認なしに次のステージへ進みません。成果物に問題があれば「Revision Required」と伝えると、そのステージからやり直します。
+The Agent never proceeds to the next stage without approval. If an artifact has problems, reply with `Revision Required` and the Agent redoes that stage.
 
-## フェーズ別ガイド
+## Phase Guide
 
-### 1. Product Discovery（`/ux-product-discovery-lite`）
+### 1. Product Discovery (`/ux-product-discovery-lite`)
 
-誰の・どんな課題を・どう解決するかを仮説として固めるフェーズです。
+Establish who the MVP serves, what problem it solves, and which hypothesis to bet on.
 
-| 成果物 | 内容 |
+| Artifact | Content |
 |---|---|
-| `intent.md` | 元の依頼と意図 |
-| `product-discovery/product-hypothesis.md` | ターゲットユーザー、課題、最もリスキーな仮説、成功指標 |
-| `product-discovery/user-journey.md` | 主要なユーザージャーニー |
+| `intent.md` | Original request and intent |
+| `product-discovery/product-hypothesis.md` | Target user, problem, riskiest hypothesis, success metrics |
+| `product-discovery/user-journey.md` | Primary user journey |
 
-**人間が承認するもの:** Product Hypothesis
+**Human approves:** the Product Hypothesis
 
-### 2. Inception（`/aidlc-inception-lite`）
+### 2. Inception (`/aidlc-inception-lite`)
 
-承認済みの仮説を、実装可能な計画に落とすフェーズです。次の順で進みます。
+Turn the approved hypothesis into an implementable plan, in this order:
 
-| 順 | Skill | 成果物 | 承認するもの |
+| # | Skill | Artifacts | Human approves |
 |---|---|---|---|
-| 1 | `aidlc-intent-bootstrap-lite` | `workflow.md` ほか管理ファイル一式 | Inception への昇格 |
-| 2 | `aidlc-workflow-composition-lite` | `workflow.md` `workflow-rationale.md` | 実行する工程・スキップする工程 |
+| 1 | `aidlc-intent-bootstrap-lite` | `workflow.md` and management files | Promotion into Inception |
+| 2 | `aidlc-workflow-composition-lite` | `workflow.md` `workflow-rationale.md` | Included and skipped stages |
 | 3 | `aidlc-requirements-analysis-lite` | `inception/requirements.md` | FR / NFR |
-| 4 | `aidlc-user-stories-lite` | `inception/personas.md` `inception/stories.md` | ペルソナとストーリー |
-| 5 | `aidlc-wireframes-lite` | `inception/wireframes/`（HTML） | 画面構成・遷移・状態 |
-| 6 | `aidlc-application-design-lite` | `inception/application-design.md` | 論理設計 |
-| 7 | `aidlc-units-generation-lite` | `inception/units-of-work.md` | Unit 分割と Inception Exit |
+| 4 | `aidlc-user-stories-lite` | `inception/personas.md` `inception/stories.md` | Personas and stories |
+| 5 | `aidlc-wireframes-lite` | `inception/wireframes/` (HTML) | Screens, flows, and states |
+| 6 | `aidlc-application-design-lite` | `inception/application-design.md` | Logical design |
+| 7 | `aidlc-units-generation-lite` | `inception/units-of-work.md` | Unit split and Inception Exit |
 
-**人間が承認するもの:** 各ステージの成果物 + 最後に Inception Exit
+**Human approves:** each stage's artifacts, then Inception Exit
 
-### 3. Construction（`/aidlc-construction-lite`）
+### 3. Construction (`/aidlc-construction-lite`)
 
-承認済みの Inception 成果物から、実際にコードを作るフェーズです。
+Build the actual code from approved Inception outputs.
 
 ```text
-Construction Input Readiness 確認 ──▶ 承認
+Construction Input Readiness check ──▶ approve
         ↓
-Construction Plan 作成 ──▶ 承認
+Create Construction Plan ──▶ approve
         ↓
-Unit ごとのループ:
-  Functional Design ──▶ 承認
-  NFR Assessment ──▶ 承認
-  （必要なら NFR Design / Infrastructure Design ──▶ 承認）
-  Code Generation: 5〜8 ファイルの Layer 単位で実装
-    各 Layer ごとに Build / Test ──▶ 承認
-  （UI を含む Unit は UI Review ──▶ 承認）
+Per-Unit loop:
+  Functional Design ──▶ approve
+  NFR Assessment ──▶ approve
+  (NFR Design / Infrastructure Design when needed ──▶ approve)
+  Code Generation: implement in Layers of about 5-8 files
+    Build / Test after each Layer ──▶ approve
+  (UI Review for Units with UI ──▶ approve)
         ↓
-Final Integration Validation ──▶ 承認
+Final Integration Validation ──▶ approve
         ↓
-Construction Exit ──▶ 承認して停止
+Construction Exit ──▶ approve and stop
 ```
 
-**人間が承認するもの:** 計画、各設計、各 Layer の実装、最終統合、Construction Exit
+**Human approves:** the plan, each design, each implemented Layer, final integration, and Construction Exit
 
-## 成果物の配置
+## Artifact Layout
 
-intent ごとの成果物はすべて次のディレクトリに集約されます。
+All artifacts for an intent live under one directory:
 
 ```text
 docs/aidlc/intents/intent-<nnn>-<slug>/
@@ -102,50 +102,50 @@ docs/aidlc/intents/intent-<nnn>-<slug>/
 ├─ inception/
 ├─ construction/
 │  ├─ construction-plan.md / state.md
-│  ├─ shared/          （Unit 横断の制約・ベースライン）
-│  ├─ <unit-id>/       （Unit ごとの設計・Layer・レビュー）
-│  └─ reviews/         （Construction 全体のレビュー）
-└─ reviews/            （Discovery / Inception のレビュー）
+│  ├─ shared/          (cross-Unit constraints and baselines)
+│  ├─ <unit-id>/       (per-Unit designs, Layers, and reviews)
+│  └─ reviews/         (Construction-wide reviews)
+└─ reviews/            (Discovery / Inception reviews)
 ```
 
-アプリケーションコードとテストは、承認済みの `code-generation-plan.md` に従ってリポジトリのソースツリーへ書かれます。
+Application code and tests are written to the repository source tree as planned in the approved `code-generation-plan.md`.
 
-## 承認の仕組み
+## How Approval Works
 
-- 各ステージの承認結果は `reviews/` 配下の review ファイルに記録されます（`Approved` / `Revision Required`）
-- `Approved` がない状態で Agent が次のステージへ進むことは禁止されています
-- 手動確認の観点は `docs/aidlc/checklists/` のチェックリストにまとまっています
+- Each stage's approval result is recorded in a review file under `reviews/` (`Approved` / `Revision Required`).
+- The Agent is forbidden from proceeding to the next stage without an `Approved` review.
+- Manual review criteria are collected in the checklists under `docs/aidlc/checklists/`.
 
-## リポジトリ構成
+## Repository Structure
 
 ```text
-.agents/skills/        Skill 定義（フェーズごとの手順・停止条件・禁止事項）
-.cursor/rules/         Cursor 用エントリルール
-docs/aidlc/templates/  成果物のテンプレート
-docs/aidlc/checklists/ 人間承認用チェックリスト
-docs/aidlc/intents/    intent ごとの成果物（実行時に生成）
-docs/aidlc/            ハーネスの設計ドキュメント
+.agents/skills/        Skill definitions (per-phase steps, stop conditions, prohibitions)
+.cursor/rules/         Cursor entry rule
+docs/aidlc/templates/  Artifact templates
+docs/aidlc/checklists/ Checklists for human approval
+docs/aidlc/intents/    Per-intent artifacts (generated at runtime)
+docs/aidlc/            Harness design documents
 ```
 
-## 設計原則（軽量化の方針)
+## Design Principles (What Is Kept Lightweight)
 
-AI-DLC v2 の設計思想を保ちつつ、初期構成では次を意図的に省いています。
+This template keeps the AI-DLC v2 design philosophy while intentionally omitting the following in the initial setup:
 
-- Kiro 固有の `.kiro/` ランタイム
+- Kiro-specific `.kiro/` runtime files
 - Subagents / Hooks / MCP / Process Checker
-- 自動 Validation スクリプト
-- Operations の自動化
+- automatic validation scripts
+- Operations automation
 
-詳細は `docs/aidlc/UPSTREAM.md` と `docs/aidlc/CONSTRUCTION-HARNESS.md` を参照してください。
+See `docs/aidlc/UPSTREAM.md` and `docs/aidlc/CONSTRUCTION-HARNESS.md` for details.
 
-## Operations 境界
+## Operations Boundary
 
-このテンプレートは Construction Exit で停止します。次の作業は行いません。
+This template stops at Construction Exit. It does not perform:
 
-- 本番デプロイ
+- production deployment
 - Terraform Apply
-- モニタリング・アラート設定
-- リリース自動化
-- シークレットの生成・コミット
+- monitoring or alert setup
+- release automation
+- secret generation or commit
 
-Operations は、人間による別途の明示的な依頼が必要です。
+Operations requires a separate, explicit human request.
