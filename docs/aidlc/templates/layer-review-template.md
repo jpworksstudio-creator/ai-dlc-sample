@@ -1,8 +1,8 @@
-# Review
+# Layer Review
 
 ## Agent Self-Review
 
-The Agent completes this section before requesting human approval, using every item from the Checklist Source.
+The Agent completes this section before requesting the human checkpoint, using `docs/aidlc/checklists/code-generation-checklist.md` and `docs/aidlc/checklists/security-lite-checklist.md`.
 
 | # | Checklist Item | Result | Note |
 |---|---|---|---|
@@ -26,18 +26,9 @@ Approved / Revision Required
 
 <timestamp>
 
-## Checklist Source
+## Human Checkpoint
 
-`docs/aidlc/checklists/<checklist>.md`
-
-## Remaining Issues
-
-- <issue or None>
-
-## Notes
-
-- <note>
-
-## Approval Statement
-
-I approve this stage and allow the next stage to begin.
+- Diff Summary reviewed:
+- Build/Test report reviewed:
+- Remaining Issues:
+- Notes:

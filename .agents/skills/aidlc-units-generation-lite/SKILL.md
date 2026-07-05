@@ -34,9 +34,16 @@ Normally use conditionally when multiple units may be needed. During the first l
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
 inception/units-of-work.md
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `units-of-work.md`: `units-of-work-template.md`
+- `reviews/units-review.md` and `reviews/inception-exit-review.md`: `review-template.md`
 
 ## Human Approval Gate
 
@@ -65,6 +72,8 @@ reviews/units-review.md
 ## Validation Checklist
 
 Use `docs/aidlc/checklists/units-checklist.md`.
+
+Before requesting human approval, self-review every checklist item and record each result in the review file's Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. This also applies to `reviews/inception-exit-review.md` using `docs/aidlc/checklists/inception-exit-checklist.md`. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
 
 ## Next Skill
 

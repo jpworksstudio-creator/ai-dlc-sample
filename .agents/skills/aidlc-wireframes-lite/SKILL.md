@@ -36,6 +36,8 @@ Use after `inception/personas.md` and `inception/stories.md` are approved. This 
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
 inception/wireframes/
 ├─ screen-data-map.md
@@ -44,6 +46,13 @@ inception/wireframes/
 └─ screens/
    └─ <screen-name>.html
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `screen-data-map.md`: `screen-data-map-template.md`
+- `screen-structure.md`: `screen-structure-template.md`
+- `wireframe-guidance.md`: `wireframe-guidance-template.md`
+- `reviews/wireframes-review.md`: `review-template.md`
 
 HTML is the standard format for simple wireframes because it supports input, interaction, state changes, responsive checks, and flow review. SVG is optional only when static layout review is enough.
 
@@ -75,6 +84,8 @@ reviews/wireframes-review.md
 ## Validation Checklist
 
 Use `docs/aidlc/checklists/wireframes-checklist.md`.
+
+Before requesting human approval, self-review every checklist item and record each result in the review file's Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
 
 ## Next Skill
 

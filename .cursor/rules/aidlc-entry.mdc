@@ -1,0 +1,14 @@
+---
+description: Entry rule for the lightweight AI-DLC Harness (Product Discovery, Inception, and Construction).
+alwaysApply: false
+---
+
+For Product Discovery, use `/ux-product-discovery-lite`.
+
+Use `/aidlc-inception-lite` only when `product-discovery/product-hypothesis.md` is approved by the human.
+
+Use `/aidlc-construction-lite` only when `reviews/inception-exit-review.md` is `Approved`.
+
+Stop at Construction Exit. Do not proceed to Operations in this Harness; Operations requires a separate, explicit human request.
+
+For detailed procedures, use the Skill definitions under `.agents/skills/`.

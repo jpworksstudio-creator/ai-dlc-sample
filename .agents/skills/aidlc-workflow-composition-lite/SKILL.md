@@ -32,10 +32,18 @@ Use after intent bootstrap and before requirements analysis.
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
 workflow.md
 workflow-rationale.md
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `workflow.md`: `workflow-template.md`
+- `workflow-rationale.md`: `workflow-rationale-template.md`
+- `reviews/workflow-review.md`: `review-template.md`
 
 ## Human Approval Gate
 
@@ -63,6 +71,8 @@ reviews/workflow-review.md
 ## Validation Checklist
 
 Use `docs/aidlc/checklists/workflow-checklist.md`.
+
+Before requesting human approval, self-review every checklist item and record each result in the review file's Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
 
 ## Next Skill
 

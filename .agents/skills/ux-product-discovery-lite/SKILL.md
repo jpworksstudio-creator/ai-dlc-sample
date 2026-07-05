@@ -45,6 +45,13 @@ docs/aidlc/intents/intent-<nnn>-<slug>/
    └─ user-journey.md
 ```
 
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `intent.md`: `intent-template.md`
+- `state.md`: `state-template.md`
+- `product-hypothesis.md`: `product-hypothesis-template.md`
+- `user-journey.md`: `user-journey-template.md`
+
 ## Human Approval Gate
 
 Do not proceed to AI-DLC Inception until the human explicitly approves `product-hypothesis.md`.
@@ -70,6 +77,8 @@ During Product Discovery, record the approval status in `state.md` and `product-
 ## Validation Checklist
 
 Use `docs/aidlc/checklists/product-discovery-checklist.md`.
+
+Before requesting human approval, self-review every checklist item and record each result under an `Agent Self-Review` heading in `product-discovery/product-hypothesis.md` as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
 
 ## Next Skill
 

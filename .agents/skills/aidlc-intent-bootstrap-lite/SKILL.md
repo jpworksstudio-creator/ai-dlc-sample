@@ -47,7 +47,13 @@ docs/aidlc/intents/intent-<nnn>-<slug>/
 └─ inception/
 ```
 
-Use templates from `docs/aidlc/templates/`.
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `workflow.md`: `workflow-template.md`
+- `decisions.md`: `decisions-template.md`
+- `open-questions.md`: `open-questions-template.md`
+- `traceability.md`: `traceability-template.md`
+- files under `reviews/`: `review-template.md`
 
 ## Human Approval Gate
 
@@ -76,6 +82,8 @@ Ask the human to confirm that the approved Product Hypothesis may be promoted in
 - Classification is stated.
 - Initial traceability exists.
 - Review result is recorded under `reviews/`.
+
+Before requesting human approval, self-review every checklist item and record each result in the review file's Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
 
 ## Next Skill
 

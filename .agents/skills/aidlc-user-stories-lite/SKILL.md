@@ -32,10 +32,18 @@ Use only after `inception/requirements.md` is approved.
 
 ## Outputs
 
+All paths are relative to the intent directory `docs/aidlc/intents/intent-<nnn>-<slug>/`.
+
 ```text
 inception/personas.md
 inception/stories.md
 ```
+
+Create each output from its template in `docs/aidlc/templates/`:
+
+- `personas.md`: `personas-template.md`
+- `stories.md`: `stories-template.md`
+- `reviews/user-stories-review.md`: `review-template.md`
 
 ## Human Approval Gate
 
@@ -64,6 +72,8 @@ reviews/user-stories-review.md
 ## Validation Checklist
 
 Use `docs/aidlc/checklists/user-stories-checklist.md`.
+
+Before requesting human approval, self-review every checklist item and record each result in the review file's Agent Self-Review section as `Pass`, `Concern`, or `Fail` with a short note. Present only `Concern` and `Fail` items to the human, each with a question or a proposed fix. Self-review never replaces human approval.
 
 ## Next Skill
 
