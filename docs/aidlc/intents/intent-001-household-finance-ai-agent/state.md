@@ -9,11 +9,11 @@
 
 ## 現在のフェーズ
 
-Current Phase: stopped-before-construction
-Current Step: inception-exit
-Status: completed
+Current Phase: construction
+Current Step: code-generation
+Status: in-progress
 Product Hypothesis Approval: approved
-Next Action: Construction 開始は人間の明示依頼が必要（本 Harness の対象外）
+Next Action: L-1 Layer チェックポイントの人間承認
 
 ## 進捗
 
@@ -27,8 +27,16 @@ Next Action: Construction 開始は人間の明示依頼が必要（本 Harness 
 | ワイヤーフレーム | 完了 | 承認済み | `inception/wireframes/` | 2026-06-07 |
 | アプリケーション設計 | 完了 | 承認済み | `inception/application-design.md` | 2026-06-07 |
 | ユニット生成 | 完了 | 承認済み | `inception/units-of-work.md` | 2026-06-07 |
-| Inception Exit | 完了 | 承認済み | `reviews/inception-exit-review.md` | 2026-06-07 承認。Construction 手前で停止 |
+| Inception Exit | 完了 | 承認済み | `reviews/inception-exit-review.md` | 2026-06-07 承認 |
+| Construction Input Readiness | 完了 | 承認済み | `construction/construction-input-readiness.md` | 2026-07-06 承認 |
+| Construction Plan | 完了 | 承認済み | `construction/construction-plan.md` | L-6 後回し（D-23） |
+| U-1 Functional Design | 完了 | 承認済み | `construction/U-1/functional-design/` | 2026-07-06 |
+| U-1 NFR Assessment | 完了 | 承認済み | `construction/U-1/nfr-requirements.md` 等 | D-27 |
+| U-1 NFR Design | 完了 | 承認済み | `construction/U-1/nfr-design/` | D-28 |
+| U-1 Infrastructure Design | 完了 | 承認済み | `construction/U-1/infrastructure-design/` | D-29 |
+| U-1 Code Generation Plan | 完了 | 承認済み | `construction/U-1/code-generation-plan.md` | D-30 |
+| U-1 Code Generation L-1 | 完了 | 承認待ち | `web/` | build Pass |
 
 ## 停止ルール
 
-Inception Exit 承認済み。Construction 手前で停止。Construction 開始は人間の明示依頼が必要。
+Construction Plan 承認後に Unit 作業を開始する。各ステージは人間承認ゲートを通過するまで次へ進まない。

@@ -44,7 +44,7 @@ Unit of Work
 | S-6 | ストーリー | 無駄遣いの指摘と改善案 | SCR-3 | | Pending |
 | S-7 | ストーリー | 良かった点の評価 | SCR-3 | | Pending |
 | S-8 | ストーリー | 家計データの削除 | SCR-4 | | Pending |
-| SCR-1 | 画面 | ホーム | U-1 | | Pending |
+| SCR-1 | 画面 | ホーム | U-1 | L-1: `web/app/page.tsx` | Pending |
 | SCR-2 | 画面 | データ取り込み | U-1 | | Pending |
 | SCR-3 | 画面 | AI チャット | U-1 | | Pending |
 | SCR-4 | 画面 | 設定 | U-1 | | Pending |

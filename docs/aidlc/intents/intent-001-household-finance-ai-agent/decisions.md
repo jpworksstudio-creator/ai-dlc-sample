@@ -20,6 +20,18 @@
 | D-16 | 2026-06-07 | エクスポート対応は Zaim を最優先とする | 主利用ツールに合わせ、MVP 第1弾の検証を迅速化するため | Moneytree 同時最優先 | Approved |
 | D-17 | 2026-06-07 | AI 応答時は質問文 + 関連取引の要約を外部 API に送信する（Bプラン） | 応答精度とプライバシーのバランスのため | A: 質問のみ / C: 集計のみ / D: ローカルのみ | Approved |
 | D-18 | 2026-06-07 | Inception Exit を承認し、Construction 手前で停止する | 本 Harness の停止ルールに従うため | Construction 即開始 | Approved |
+| D-19 | 2026-07-06 | 技術スタックは Next.js をベースとする | Q-2 回答・Construction 開始時のユーザー依頼 | Remix, Vite+React | Approved |
+| D-20 | 2026-07-06 | LLM プロバイダは OpenAI とする | Construction Input Readiness 承認時のユーザー回答 | Anthropic, ローカル LLM | Approved |
+| D-21 | 2026-07-06 | 家計データの端末内永続化は localStorage を用いる | Construction Input Readiness 承認時のユーザー回答 | IndexedDB, sessionStorage | Approved |
+| D-22 | 2026-07-06 | Construction Input Readiness を承認する | Inception 成果物が Construction 開始に十分であるため | — | Approved |
+| D-23 | 2026-07-06 | Moneytree 取り込み（L-6 / FR-2 / S-2）は第1弾実装から除外し後回しとする | D-16 に沿い Zaim 優先。Construction Plan 承認時のユーザー判断 | L-6 を第1弾に含める | Approved |
+| D-24 | 2026-07-06 | Construction Plan を承認する | U-1 の実装順・Layer 案・制約を確定するため | — | Approved |
+| D-25 | 2026-07-06 | U-1 Functional Design を承認する | ビジネスロジック・エンティティ・ルールを確定するため | — | Approved |
+| D-26 | 2026-07-06 | 技術スタックを npm 最新安定版に更新する（Next.js 16.2.10 等） | ユーザー依頼。LTS・最新 mini LLM を採用 | Next.js 15, gpt-4o-mini | Approved |
+| D-27 | 2026-07-06 | U-1 NFR Assessment を承認する（依存13件・gpt-5.4-mini 含む） | 品質要件と技術選定を確定するため | — | Approved |
+| D-28 | 2026-07-06 | U-1 NFR Design を承認する | NFR パターンと論理コンポーネントを確定するため | — | Approved |
+| D-29 | 2026-07-06 | U-1 Infrastructure Design を承認する | 環境変数・API 接続・ランタイム形状を確定するため | — | Approved |
+| D-30 | 2026-07-06 | U-1 Code Generation Plan を承認する | L-1〜L-5 の Layer 分割を確定するため | — | Approved |
 
 ## 備考
 
