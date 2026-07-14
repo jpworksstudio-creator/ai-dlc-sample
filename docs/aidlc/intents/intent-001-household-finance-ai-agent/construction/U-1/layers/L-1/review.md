@@ -16,15 +16,15 @@
 
 ## Status
 
-（承認待ち）
+Approved
 
 ## Reviewer
 
-（未記入）
+ユーザー
 
 ## Reviewed At
 
-（未記入）
+2026-07-08
 
 ## Human Checkpoint
 
@@ -35,4 +35,4 @@
 
 ## Approval Statement
 
-（人間が承認時に記入）
+L-1 を承認（D-31）
