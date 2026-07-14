@@ -5,7 +5,7 @@
 - インテント ID: intent-001-household-finance-ai-agent
 - スラッグ: household-finance-ai-agent
 - 作成日: 2026-06-07
-- 更新日: 2026-06-07
+- 更新日: 2026-07-15
 
 ## 現在のフェーズ
 
@@ -13,7 +13,7 @@ Current Phase: construction
 Current Step: code-generation
 Status: in-progress
 Product Hypothesis Approval: approved
-Next Action: L-1 Layer チェックポイントの人間承認
+Next Action: L-5 承認済み。UI Review / Unit Build-and-Test はユーザー指示待ち（未着手）
 
 ## 進捗
 
@@ -35,7 +35,11 @@ Next Action: L-1 Layer チェックポイントの人間承認
 | U-1 NFR Design | 完了 | 承認済み | `construction/U-1/nfr-design/` | D-28 |
 | U-1 Infrastructure Design | 完了 | 承認済み | `construction/U-1/infrastructure-design/` | D-29 |
 | U-1 Code Generation Plan | 完了 | 承認済み | `construction/U-1/code-generation-plan.md` | D-30 |
-| U-1 Code Generation L-1 | 完了 | 承認待ち | `web/` | build Pass |
+| U-1 Code Generation L-1 | 完了 | 承認済み | `web/` | D-31 |
+| U-1 Code Generation L-2 | 完了 | 承認済み | `web/lib/` 等 | D-32 |
+| U-1 Code Generation L-3 | 完了 | 承認済み | `web/app/import`, `web/lib/import` | D-33 |
+| U-1 Code Generation L-4 | 完了 | 承認済み | `web/app/chat`, `web/app/api/chat` | D-34 |
+| U-1 Code Generation L-5 | 完了 | 承認済み | `web/app/settings` | D-35。次ステージ保留 |
 
 ## 停止ルール
 

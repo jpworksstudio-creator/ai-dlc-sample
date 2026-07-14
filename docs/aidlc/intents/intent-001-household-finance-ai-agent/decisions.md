@@ -32,6 +32,11 @@
 | D-28 | 2026-07-06 | U-1 NFR Design を承認する | NFR パターンと論理コンポーネントを確定するため | — | Approved |
 | D-29 | 2026-07-06 | U-1 Infrastructure Design を承認する | 環境変数・API 接続・ランタイム形状を確定するため | — | Approved |
 | D-30 | 2026-07-06 | U-1 Code Generation Plan を承認する | L-1〜L-5 の Layer 分割を確定するため | — | Approved |
+| D-31 | 2026-07-08 | U-1 Code Generation L-1 を承認する | App Shell・ホーム Empty・build 成功を確認 | — | Approved |
+| D-32 | 2026-07-14 | U-1 Code Generation L-2 を承認する | localStorage・ドメインモデル・Vitest・ホーム連携を確認 | — | Approved |
+| D-33 | 2026-07-14 | U-1 Code Generation L-3 を承認する | Zaim CSV 取り込み・カテゴリ正規化・SCR-2 を確認 | — | Approved |
+| D-34 | 2026-07-15 | U-1 Code Generation L-4 を承認する | `/api/chat`・チャット UI・構造化応答を確認 | — | Approved |
+| D-35 | 2026-07-15 | U-1 Code Generation L-5 を承認する | 設定・全削除・SCR-4 を確認。次ステージは保留 | — | Approved |
 
 ## 備考
 
