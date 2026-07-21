@@ -1,26 +1,23 @@
 # Construction State
 
-Current Unit: U-1
+Current Unit: —
 
-Current Layer: L-5（承認済み・次ステージ保留）
+Current Layer: —
 
-Completed Units:
+Completed Units: U-1
 
-Pending Units: U-1
+Pending Units: None
 
 Shared Baseline Version: v1
 
-Approval Status: layers-L1-L5-approved; ui-review-deferred
+Approval Status: construction-exit-approved
 
 ## Progress
 
 | Unit | Stage | Status | Review | Notes |
 |---|---|---|---|---|
-| U-1 | code-generation-plan | completed | approved | D-30 |
-| U-1 | code-generation L-1 | completed | approved | D-31 |
-| U-1 | code-generation L-2 | completed | approved | D-32 |
-| U-1 | code-generation L-3 | completed | approved | D-33 |
-| U-1 | code-generation L-4 | completed | approved | D-34 |
-| U-1 | code-generation L-5 | completed | approved | D-35。次は保留 |
-| U-1 | ui-review | pending | pending | ユーザー指示で未着手 |
-| U-1 | unit-build-and-test | pending | pending | ユーザー指示で未着手 |
+| U-1 | code-generation L-1〜L-5 | completed | approved | D-31〜D-35 |
+| U-1 | ui-review | completed | approved | D-36 |
+| U-1 | unit-build-and-test | completed | approved | D-37 |
+| — | final-integration | completed | approved | D-38 |
+| — | construction-exit | completed | approved | D-39。Harness 停止 |
