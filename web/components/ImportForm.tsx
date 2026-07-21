@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, type FormEvent } from "react";
-import { parseZaimCsv } from "@/lib/import/zaim-parser";
+import { decodeCsvBytes, parseZaimCsv } from "@/lib/import/zaim-parser";
 import { saveHouseholdData } from "@/lib/storage/local-storage-adapter";
 import { StorageQuotaError } from "@/lib/types";
 
@@ -43,7 +43,8 @@ export function ImportForm() {
     setStatus("loading");
 
     try {
-      const text = await file.text();
+      const bytes = new Uint8Array(await file.arrayBuffer());
+      const text = decodeCsvBytes(bytes);
       const result = parseZaimCsv(text);
 
       if (!result.success) {
