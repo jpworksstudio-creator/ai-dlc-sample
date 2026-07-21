@@ -37,6 +37,10 @@
 | D-33 | 2026-07-14 | U-1 Code Generation L-3 を承認する | Zaim CSV 取り込み・カテゴリ正規化・SCR-2 を確認 | — | Approved |
 | D-34 | 2026-07-15 | U-1 Code Generation L-4 を承認する | `/api/chat`・チャット UI・構造化応答を確認 | — | Approved |
 | D-35 | 2026-07-15 | U-1 Code Generation L-5 を承認する | 設定・全削除・SCR-4 を確認。次ステージは保留 | — | Approved |
+| D-36 | 2026-07-16 | U-1 UI Review を承認する | Concern 1〜3 許容、チャット入力下部固定は反映済み | — | Approved |
+| D-37 | 2026-07-16 | U-1 Unit Build-and-Test を承認する | Vitest 13件 + build Pass。ESLint 未設定は許容 | — | Approved |
+| D-38 | 2026-07-16 | Final Integration を承認する | U-1 単一 Unit の統合検証完了。Lint/E2E 未導入は許容 | — | Approved |
+| D-39 | 2026-07-16 | Construction Exit を承認する | U-1 第1弾完了。Operations 非実施で Harness 停止 | — | Approved |
 
 ## 備考
 

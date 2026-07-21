@@ -3,8 +3,8 @@ import { ChatView } from "@/components/ChatView";
 
 export default function ChatPage() {
   return (
-    <div className="space-y-4">
-      <div className="flex items-center gap-3">
+    <div className="flex h-[calc(100dvh-8.5rem)] flex-col gap-3">
+      <div className="flex shrink-0 items-center gap-3">
         <Link
           href="/"
           aria-label="ホームへ戻る"

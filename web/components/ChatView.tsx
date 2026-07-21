@@ -156,8 +156,11 @@ export function ChatView() {
   }
 
   return (
-    <div className="flex min-h-[70dvh] flex-col gap-4">
-      <section aria-label="会話履歴" className="flex-1 space-y-3 overflow-y-auto">
+    <div className="flex min-h-0 flex-1 flex-col">
+      <section
+        aria-label="会話履歴"
+        className="min-h-0 flex-1 space-y-3 overflow-y-auto pb-3"
+      >
         {messages.length === 0 && (
           <div className="space-y-2">
             <p className="text-sm text-gray-600">サンプル質問</p>
@@ -206,7 +209,10 @@ export function ChatView() {
         )}
       </section>
 
-      <form onSubmit={handleSubmit} className="space-y-2 border-t border-gray-200 pt-3">
+      <form
+        onSubmit={handleSubmit}
+        className="sticky bottom-0 shrink-0 space-y-2 border-t border-gray-200 bg-white pt-3"
+      >
         <label htmlFor="question" className="block text-sm font-medium text-gray-900">
           質問を入力
         </label>
