@@ -21,7 +21,7 @@
 | D-17 | 2026-06-07 | AI 応答時は質問文 + 関連取引の要約を外部 API に送信する（Bプラン） | 応答精度とプライバシーのバランスのため | A: 質問のみ / C: 集計のみ / D: ローカルのみ | Approved |
 | D-18 | 2026-06-07 | Inception Exit を承認し、Construction 手前で停止する | 本 Harness の停止ルールに従うため | Construction 即開始 | Approved |
 | D-19 | 2026-07-06 | 技術スタックは Next.js をベースとする | Q-2 回答・Construction 開始時のユーザー依頼 | Remix, Vite+React | Approved |
-| D-20 | 2026-07-06 | LLM プロバイダは OpenAI とする | Construction Input Readiness 承認時のユーザー回答 | Anthropic, ローカル LLM | Approved |
+| D-20 | 2026-07-06 | LLM プロバイダは OpenAI とする | Construction Input Readiness 承認時のユーザー回答 | Anthropic, ローカル LLM | Superseded by D-40 |
 | D-21 | 2026-07-06 | 家計データの端末内永続化は localStorage を用いる | Construction Input Readiness 承認時のユーザー回答 | IndexedDB, sessionStorage | Approved |
 | D-22 | 2026-07-06 | Construction Input Readiness を承認する | Inception 成果物が Construction 開始に十分であるため | — | Approved |
 | D-23 | 2026-07-06 | Moneytree 取り込み（L-6 / FR-2 / S-2）は第1弾実装から除外し後回しとする | D-16 に沿い Zaim 優先。Construction Plan 承認時のユーザー判断 | L-6 を第1弾に含める | Approved |
@@ -41,6 +41,7 @@
 | D-37 | 2026-07-16 | U-1 Unit Build-and-Test を承認する | Vitest 13件 + build Pass。ESLint 未設定は許容 | — | Approved |
 | D-38 | 2026-07-16 | Final Integration を承認する | U-1 単一 Unit の統合検証完了。Lint/E2E 未導入は許容 | — | Approved |
 | D-39 | 2026-07-16 | Construction Exit を承認する | U-1 第1弾完了。Operations 非実施で Harness 停止 | — | Approved |
+| D-40 | 2026-07-23 | LLM プロバイダは Gemini を優先する（無料枠利用）。OpenAI は廃止 | Issue #8。無料枠で日本語家計相談を使うため | Groq, OpenAI 継続 | Approved |
 
 ## 備考
 

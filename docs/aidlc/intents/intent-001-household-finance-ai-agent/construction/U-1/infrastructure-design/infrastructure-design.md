@@ -8,15 +8,15 @@ Unit ID: U-1
 
 | Name | Purpose | Required | Secret | Mockable | Notes |
 |---|---|---|---|---|---|
-| `OPENAI_API_KEY` | OpenAI API 認証 | Yes（AI 機能有効時） | Yes | Yes（モック Route） | `.env.local` のみ。gitignore 必須 |
-| `OPENAI_MODEL` | 使用モデル上書き | No | No | Yes | 未設定時 `gpt-5.4-mini`（CCD-2） |
-| `OPENAI_TIMEOUT_MS` | API タイムアウト（ms） | No | No | Yes | 未設定時 `30000`（NFR-U1-2） |
+| `GEMINI_API_KEY` | Gemini API 認証 | Yes（AI 機能有効時） | Yes | Yes（モック Route） | `.env.local` のみ。gitignore 必須 |
+| `GEMINI_MODEL` | 使用モデル上書き | No | No | Yes | 未設定時 `gemini-2.5-flash`（D-40） |
+| `GEMINI_TIMEOUT_MS` | API タイムアウト（ms） | No | No | Yes | 未設定時 `30000`（NFR-U1-2） |
 
 ## External API Conditions
 
 | API | Purpose | Timeout | Retry | Mock / Fixture |
 |---|---|---|---|---|
-| OpenAI Chat Completions API | 家計相談応答生成（構造化 JSON） | 30s（`OPENAI_TIMEOUT_MS`） | なし（MVP）。失敗時は UI エラー | `OPENAI_API_KEY=mock` 時にスタブ応答 Route |
+| Gemini generateContent API | 家計相談応答生成（構造化 JSON） | 30s（`GEMINI_TIMEOUT_MS`） | なし（MVP）。失敗時は UI エラー | `GEMINI_API_KEY=mock` 時にスタブ応答 Route |
 
 ### リクエスト仕様（Bプラン）
 
@@ -28,7 +28,7 @@ Unit ID: U-1
 
 - **Node.js**: ≥ 20.9.0（KC-1a）
 - **開発起動**: `npm run dev`（Next.js 16, Turbopack 既定）
-- **環境ファイル**: `.env.local` に `OPENAI_API_KEY` を設定
+- **環境ファイル**: `.env.local` に `GEMINI_API_KEY` を設定
 - **ブラウザ**: Chrome / Safari / Firefox 最新（localStorage 利用）
 - **永続ストア**: サーバー側 DB・Redis 不要。クライアント localStorage のみ
 
@@ -36,16 +36,16 @@ Unit ID: U-1
 
 | 用途 | 方法 |
 |---|---|
-| OpenAI なし開発 | `OPENAI_API_KEY=mock` で `/api/chat` が固定 JSON を返す |
+| Gemini なし開発 | `GEMINI_API_KEY=mock` で `/api/chat` が固定 JSON を返す |
 | Zaim CSV テスト | `fixtures/zaim-sample.csv`（L-3 で Code Generation 作成） |
 | localStorage テスト | Vitest + `localStorage` mock |
 
 ## `.env.example` 要件（Code Generation で生成）
 
 ```text
-OPENAI_API_KEY=
-OPENAI_MODEL=gpt-5.4-mini
-OPENAI_TIMEOUT_MS=30000
+GEMINI_API_KEY=
+GEMINI_MODEL=gemini-2.5-flash
+GEMINI_TIMEOUT_MS=30000
 ```
 
 ## Provisioning Boundary

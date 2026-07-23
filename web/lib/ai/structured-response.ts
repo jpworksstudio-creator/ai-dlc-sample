@@ -18,7 +18,7 @@ function isStringArray(value: unknown): value is string[] {
 }
 
 /**
- * OpenAI 応答 JSON を検証し、BR-9（改善案・良かった点を各1件以上）を満たす形へ正規化する。
+ * LLM 応答 JSON を検証し、BR-9（改善案・良かった点を各1件以上）を満たす形へ正規化する。
  */
 export function parseStructuredResponse(raw: unknown): StructuredAgentResponse {
   if (!raw || typeof raw !== "object") {

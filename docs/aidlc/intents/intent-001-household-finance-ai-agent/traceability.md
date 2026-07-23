@@ -50,7 +50,7 @@ Unit of Work
 | SCR-4 | 画面 | 設定 | U-1 | L-5: `web/app/settings/page.tsx` | Pending |
 | U-1 | ユニット | 家計 AI エージェント Web アプリ | S-1〜S-8 | | Pending |
 | NFR-1 | 非機能要件 | スマホブラウザ対応（320px 以上） | SCR-1〜SCR-4 | | Pending |
-| NFR-2 | 非機能要件 | 30秒以内応答（SM-1） | FR-5 | L-4: `OPENAI_TIMEOUT_MS` | Pending |
+| NFR-2 | 非機能要件 | 30秒以内応答（SM-1） | FR-5 | L-4: `GEMINI_TIMEOUT_MS` | Pending |
 | NFR-3 | 非機能要件 | カテゴリ金額±10%（SM-2） | FR-6 | L-3: `category-normalizer.ts` | Pending |
 | NFR-4 | 非機能要件 | 改善案＋良かった点（SM-3） | FR-8, FR-9 | L-4: `structured-response.ts` | Pending |
 | NFR-5 | 非機能要件 | 端末外への永続送信なし | FR-3 | L-2: localStorage アダプター | Pending |

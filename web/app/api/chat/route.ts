@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import OpenAI from "openai";
+import { generateGeminiJson } from "@/lib/ai/gemini-client";
 import {
   createMockStructuredResponse,
   parseStructuredResponse,
@@ -8,8 +8,17 @@ import {
 import type { TransactionSummary } from "@/lib/ai/transaction-summarizer";
 
 const MAX_QUESTION_LENGTH = 500;
-const DEFAULT_MODEL = "gpt-5.4-mini";
+const DEFAULT_MODEL = "gemini-2.5-flash";
 const DEFAULT_TIMEOUT_MS = 30000;
+
+const SYSTEM_INSTRUCTION = [
+  "あなたは家計相談アシスタントです。",
+  "ユーザーの質問と取引要約だけを根拠に、日本語の JSON で回答してください。",
+  "必須キー: summary(string), improvements(string[]), positives(string[])。",
+  "improvements と positives は各1件以上。",
+  "任意キー: categoryAmounts(object), transactions(array).",
+  "推測で実在しない金額を作らないでください。",
+].join(" ");
 
 type ChatRequestBody = {
   question?: unknown;
@@ -72,11 +81,11 @@ export async function POST(request: Request) {
   }
 
   const summary = body.summary;
-  const apiKey = process.env.OPENAI_API_KEY?.trim() ?? "";
+  const apiKey = process.env.GEMINI_API_KEY?.trim() ?? "";
 
   if (!apiKey) {
     return NextResponse.json(
-      { error: "OPENAI_API_KEY が設定されていません" },
+      { error: "GEMINI_API_KEY が設定されていません" },
       { status: 503 },
     );
   }
@@ -88,41 +97,17 @@ export async function POST(request: Request) {
     });
   }
 
-  const model = process.env.OPENAI_MODEL?.trim() || DEFAULT_MODEL;
-  const timeoutMs = Number(process.env.OPENAI_TIMEOUT_MS) || DEFAULT_TIMEOUT_MS;
-  const client = new OpenAI({ apiKey, timeout: timeoutMs });
+  const model = process.env.GEMINI_MODEL?.trim() || DEFAULT_MODEL;
+  const timeoutMs = Number(process.env.GEMINI_TIMEOUT_MS) || DEFAULT_TIMEOUT_MS;
 
   try {
-    const completion = await client.chat.completions.create({
+    const content = await generateGeminiJson({
+      apiKey,
       model,
-      temperature: 0.3,
-      response_format: { type: "json_object" },
-      messages: [
-        {
-          role: "system",
-          content: [
-            "あなたは家計相談アシスタントです。",
-            "ユーザーの質問と取引要約だけを根拠に、日本語の JSON で回答してください。",
-            '必須キー: summary(string), improvements(string[]), positives(string[])。',
-            "improvements と positives は各1件以上。",
-            "任意キー: categoryAmounts(object), transactions(array).",
-            "推測で実在しない金額を作らないでください。",
-          ].join(" "),
-        },
-        {
-          role: "user",
-          content: JSON.stringify({ question, summary }),
-        },
-      ],
+      systemInstruction: SYSTEM_INSTRUCTION,
+      userText: JSON.stringify({ question, summary }),
+      timeoutMs,
     });
-
-    const content = completion.choices[0]?.message?.content;
-    if (!content) {
-      return NextResponse.json(
-        { error: "AI 応答が空でした" },
-        { status: 502 },
-      );
-    }
 
     const parsed = parseStructuredResponse(JSON.parse(content));
     return NextResponse.json({ response: parsed });
@@ -130,11 +115,14 @@ export async function POST(request: Request) {
     const message =
       error instanceof Error ? error.message : "AI 応答の取得に失敗しました";
     const isTimeout = /timeout|timed out/i.test(message);
+    const isEmpty = /空でした/.test(message);
     return NextResponse.json(
       {
         error: isTimeout
           ? "応答がタイムアウトしました。もう一度お試しください"
-          : "応答を取得できませんでした。もう一度お試しください",
+          : isEmpty
+            ? "AI 応答が空でした"
+            : "応答を取得できませんでした。もう一度お試しください",
       },
       { status: isTimeout ? 504 : 502 },
     );
