@@ -11,7 +11,7 @@ Unit ID: U-1
 | L-1 | Next.js 16 初期化、AppShell、ホーム Empty | 8 + .gitignore | build | 承認済み（D-31） |
 | L-2 | localStorage、ドメインモデル、DatasetSummary | 8 | Vitest 4件 | 承認済み（D-32） |
 | L-3 | Zaim CSV 取り込み、カテゴリ正規化、SCR-2 | 7 + papaparse | Vitest 4件 | 承認済み（D-33） |
-| L-4 | `/api/chat`、OpenAI、SCR-3 チャット | 8 + openai | Vitest 4件 | 承認済み（D-34） |
+| L-4 | `/api/chat`、Gemini、SCR-3 チャット | 8（openai SDK 廃止・fetch） | Vitest | 承認済み（D-34）。LLM は D-40 で Gemini へ |
 | L-5 | 設定・全データ削除、SCR-4 | 5 | Vitest 1件 | 承認済み（D-35） |
 | UI Review | SCR-1〜4 照合、Concern 許容・入力下部固定 | — | — | 承認済み（D-36） |
 

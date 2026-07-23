@@ -14,7 +14,7 @@ Unit ID: U-1
 | `ZaimCsvImporter` | CSV 検証・パース・正規化・保存 | NFR-U1-3, NFR-U1-7 | papaparse, LocalStorageAdapter |
 | `CategoryNormalizer` | Zaim カテゴリ → 正規化カテゴリ変換 | NFR-U1-3 | — |
 | `TransactionSummarizer` | AI 送信用の関連取引要約生成 | NFR-U1-5, NFR-U1-2 | CategoryNormalizer, LocalStorageAdapter |
-| `ChatApiRoute` (`/api/chat`) | 入力再検証・OpenAI 呼び出し・30s タイムアウト | NFR-U1-2, NFR-U1-6, NFR-U1-7 | openai SDK |
+| `ChatApiRoute` (`/api/chat`) | 入力再検証・Gemini 呼び出し・30s タイムアウト | NFR-U1-2, NFR-U1-6, NFR-U1-7 | fetch（Gemini REST） |
 | `StructuredResponseParser` | JSON schema 検証（improvements/positives） | NFR-U1-4 | — |
 | `ChatPresenter` | 金額・明細・改善案・良かった点の UI 表示 | NFR-U1-1, NFR-U1-4 | React |
 | `SettingsManager` | プライバシー説明・全削除（確認ダイアログ） | NFR-U1-7, CCR-7 | LocalStorageAdapter |

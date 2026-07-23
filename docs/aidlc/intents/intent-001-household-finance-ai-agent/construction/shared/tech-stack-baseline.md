@@ -14,7 +14,7 @@ Baseline Version: v1（2026-07-06 — 最新安定版ピン留め）
 | 言語 | TypeScript | 6.0.3 | 最新安定 | U-1 |
 | スタイリング | Tailwind CSS + PostCSS プラグイン | 4.3.2 | Tailwind v4 最新 | U-1 |
 | クライアント永続化 | localStorage | — | D-21 | U-1 |
-| LLM | OpenAI API | SDK 6.45.0 / モデル `gpt-5.4-mini` | D-20, D-26 | U-1 |
+| LLM | Gemini API | REST + fetch / モデル `gemini-2.5-flash` | D-40 | U-1 |
 | テスト | Vitest + Testing Library | 4.1.9 / 16.3.2 | Layer 検証 | U-1 |
 | Lint | eslint-config-next | 16.2.10 | Next.js 同バージョン | U-1 |
 

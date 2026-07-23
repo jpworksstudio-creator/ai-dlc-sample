@@ -18,12 +18,12 @@ Unit ID: U-1
 │  Next.js 16 サーバー（Node.js ≥ 20.9）    │
 │  ├─ App Router（静的+動的ページ）         │
 │  ├─ Route Handler: POST /api/chat        │
-│  │    └─ OPENAI_API_KEY（サーバーのみ）   │
+│  │    └─ GEMINI_API_KEY（サーバーのみ）   │
 │  └─ ビルド: Turbopack（next build）       │
 └──────────────────┬──────────────────────┘
                    │ HTTPS
 ┌──────────────────▼──────────────────────┐
-│  OpenAI API（gpt-5.4-mini）              │
+│  Gemini API（gemini-2.5-flash）          │
 │  ※ 質問 + 取引要約のみ一時送信            │
 └─────────────────────────────────────────┘
 ```
@@ -33,9 +33,9 @@ Unit ID: U-1
 
 ## Development Environment
 
-- **環境変数**: `.env.local`（`OPENAI_API_KEY` 必須。`OPENAI_MODEL`, `OPENAI_TIMEOUT_MS` は任意）
-- **Mock / Fixture**: `OPENAI_API_KEY=mock` で API スタブ。Zaim サンプル CSV を fixtures に配置
-- **外部 API 前提**: 開発者が OpenAI API キーを保有。オフライン時はモックモード
+- **環境変数**: `.env.local`（`GEMINI_API_KEY` 必須。`GEMINI_MODEL`, `GEMINI_TIMEOUT_MS` は任意）
+- **Mock / Fixture**: `GEMINI_API_KEY=mock` で API スタブ。Zaim サンプル CSV を fixtures に配置
+- **外部 API 前提**: 開発者が Gemini API キーを保有。オフライン時はモックモード
 
 ## Production Boundary
 
@@ -46,5 +46,5 @@ Unit ID: U-1
 | 項目 | 想定 |
 |---|---|
 | ホスティング | Vercel 等（Next.js 互換） |
-| 環境変数 | ホスティングの Secret 管理で `OPENAI_API_KEY` 設定 |
+| 環境変数 | ホスティングの Secret 管理で `GEMINI_API_KEY` 設定 |
 | データ | 引き続きクライアント localStorage のみ |
